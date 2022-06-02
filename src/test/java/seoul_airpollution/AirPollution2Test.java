@@ -9,8 +9,8 @@ public class AirPollution2Test {
         Configuration conf = new Configuration();
         conf.setInt("mapreduce.job.reduces", 3);
 
-        //String[] input_args = {"src/test/resources/Measurement_info.csv"};
-        String[] input_args = {"src/test/resources/abc.csv"};
+        String[] input_args = {"src/test/resources/Measurement_info.csv"};
+        //String[] input_args = {"src/test/resources/abc.csv"};
         ToolRunner.run(conf, new AirPollution2(), input_args);
     }
 }

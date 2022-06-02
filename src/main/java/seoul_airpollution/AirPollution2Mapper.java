@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class AirPollution2Mapper extends Mapper<Object, Text, Text, IntWritable> {
 
+    Boolean head = true;
     Text region = new Text();
     IntWritable one = new IntWritable(1);
 
@@ -17,7 +18,12 @@ public class AirPollution2Mapper extends Mapper<Object, Text, Text, IntWritable>
         // 0.날짜 시간, 1.지역, 2.오염물질, 3.수치
         String[] line = value.toString().split(",");
 
-        if (line[2].equals("8") && Float.parseFloat(line[3]) <= 30
+        if (head || line[3].equals("-1") || line[3].equals("0")) {
+            head = false;
+            return;
+        }
+
+        if (line[2].equals("8") && Float.parseFloat(line[3]) <= 40
                 || line[2].equals("9") && Float.parseFloat(line[3]) <= 15 ) {
             region.set(line[1]);
             context.write(region, one);

@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class AirPollution4Mapper extends Mapper<Object, Text, Text, FloatWritable> {
 
+    Boolean head = true;
     Text time_pollutant = new Text();
     FloatWritable figure = new FloatWritable();
 
@@ -16,6 +17,11 @@ public class AirPollution4Mapper extends Mapper<Object, Text, Text, FloatWritabl
             throws IOException, InterruptedException {
         // 0.날짜 시간, 1.지역, 2.오염물질, 3.수치
         String[] line = value.toString().split(",");
+
+        if (head || line[3].equals("-1") || line[3].equals("0")) {
+            head = false;
+            return;
+        }
 
         time_pollutant.set(line[0].split(" ")[1] + "\t" + line[2]);
         figure.set(Float.parseFloat(line[3]));
