@@ -18,6 +18,8 @@ public class AirPollution2Reducer extends Reducer<Text, IntWritable, Text, IntWr
         for(IntWritable v : values) {
             sum += v.get();
         }
+
+        // key: 지역명, value: 지역수
         result.set(sum);
         context.write(key, result);
     }

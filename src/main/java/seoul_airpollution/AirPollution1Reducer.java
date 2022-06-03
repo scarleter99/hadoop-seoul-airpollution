@@ -28,6 +28,8 @@ public class AirPollution1Reducer extends Reducer<Text, FloatWritable, Text, Tex
             }
             num++;
         }
+
+        // key: 지역명, value: 평균 최대 최소
         result.set(sum/num + "\t" + max + "\t" + mean);
         context.write(key, result);
     }

@@ -22,6 +22,7 @@ public class AirPollution4Reducer extends Reducer<Text, FloatWritable, Text, Tex
             num++;
         }
 
+        // key: 시간 오염물질명, value: 평균
         result.set(sum/num + "");
         context.write(key, result);
     }

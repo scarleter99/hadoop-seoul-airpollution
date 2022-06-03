@@ -18,9 +18,9 @@ public class AirPollution3Reducer extends Reducer<Text, FloatWritable, Text, Tex
         for(FloatWritable v : values) {
             figures.append(v.get()).append("\t");
         }
-        figures = new StringBuilder(figures.toString().trim());
 
-        result.set(figures.toString());
+        // key: 날짜 시간 지역, value: 모든 수치
+        result.set(figures.toString().trim());
         context.write(key, result);
     }
 }
