@@ -30,7 +30,7 @@ public class AirPollution4 extends Configured implements Tool {
 
         // Map 출력 key, value 유형 설정
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(FloatWritable.class);
+        job.setMapOutputValueClass(Text.class);
 
         // Reducer 출력 key, value 유형 설정
         job.setOutputKeyClass(Text.class);
