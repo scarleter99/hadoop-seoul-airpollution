@@ -4,7 +4,6 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class AirPollution4Reducer extends Reducer<Text, Text, Text, Text> {
 

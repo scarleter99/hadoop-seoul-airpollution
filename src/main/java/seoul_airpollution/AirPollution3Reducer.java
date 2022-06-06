@@ -1,11 +1,9 @@
 package seoul_airpollution;
 
-import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class AirPollution3Reducer extends Reducer<Text, Text, Text, Text> {
 

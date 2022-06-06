@@ -1,6 +1,5 @@
 package seoul_airpollution;
 
-import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
