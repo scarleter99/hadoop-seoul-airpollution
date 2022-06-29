@@ -28,7 +28,7 @@ public class AirPollution1 extends Configured implements Tool {
         job.setMapperClass(AirPollution1Mapper.class);
         job.setReducerClass(AirPollution1Reducer.class);
 
-        // Map 출력 key, value 유형 설정
+        // Mapper 출력 key, value 유형 설정
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(FloatWritable.class);
 
